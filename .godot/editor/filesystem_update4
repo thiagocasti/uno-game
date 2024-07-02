@@ -1,0 +1,13 @@
+res://main-menu/menu.tscn
+res://pause-menu/control.gdshader
+res://main.tscn
+res://CardContainer.gd
+res://Game.gd
+res://card.gd
+res://card.tscn
+res://cardHolder.tscn
+res://main-menu/menu.gd
+res://board.tscn
+res://CardPlacement.gd
+res://card_placement.tscn
+res://CardOnBoard.tscn

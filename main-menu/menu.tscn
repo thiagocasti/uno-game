@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3vwljmlv880h"]
+
+[ext_resource type="Script" path="res://main-menu/menu.gd" id="1_5lf52"]
+[ext_resource type="Texture2D" uid="uid://5ql81atufsq" path="res://Assets/Background/background.png" id="2_unesf"]
+[ext_resource type="Texture2D" uid="uid://b1wq4l8frrqbx" path="res://Assets/GUI/uno-logo.png" id="3_oxc5o"]
+[ext_resource type="Texture2D" uid="uid://byu2qmjbb86vw" path="res://Assets/GUI/uno-play-button.png" id="4_j2wur"]
+
+[sub_resource type="SystemFont" id="SystemFont_cou7x"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5lf52")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_unesf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_oxc5o")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_cou7x")
+theme_override_font_sizes/font_size = 24
+text = "JUGAR!"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/start_button"]
+layout_mode = 2
+offset_left = -57.0
+offset_top = -42.0
+offset_right = 187.0
+offset_bottom = 73.0
+size_flags_horizontal = 4
+texture = ExtResource("4_j2wur")
+stretch_mode = 2
+
+[node name="exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_cou7x")
+theme_override_font_sizes/font_size = 24
+text = "SALIR "
+
+[node name="separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2

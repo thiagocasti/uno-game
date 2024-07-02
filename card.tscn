@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcaxd6yviw1t3"]
+
+[ext_resource type="Texture2D" uid="uid://bka3yamvn4j14" path="res://Assets/Cards/card back/card_back.png" id="1_0rucg"]
+[ext_resource type="Script" path="res://card.gd" id="1_62k7j"]
+
+[sub_resource type="Animation" id="Animation_rv5su"]
+resource_name = "Select"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardBacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, 68), Vector2(53, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_8o0c2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardBacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(53, 68)]
+}
+
+[sub_resource type="Animation" id="Animation_ltsdr"]
+resource_name = "Deselect"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardBacks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, 24), Vector2(53, 68)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkn5k"]
+_data = {
+"Deselect": SubResource("Animation_ltsdr"),
+"RESET": SubResource("Animation_8o0c2"),
+"Select": SubResource("Animation_rv5su")
+}
+
+[node name="Card" type="Container"]
+custom_minimum_size = Vector2(105, 136)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_62k7j")
+
+[node name="cardBacks" type="Sprite2D" parent="."]
+position = Vector2(53, 68)
+scale = Vector2(0.539634, 0.50098)
+texture = ExtResource("1_0rucg")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jkn5k")
+}
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

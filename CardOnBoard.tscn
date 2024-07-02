@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvy0nc5j5s1v4"]
+
+[ext_resource type="Texture2D" uid="uid://bka3yamvn4j14" path="res://Assets/Cards/card back/card_back.png" id="2_txf6x"]
+
+[node name="Card" type="Container"]
+custom_minimum_size = Vector2(105, 136)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="cardBacks" type="Sprite2D" parent="."]
+position = Vector2(53, 68)
+scale = Vector2(0.539634, 0.50098)
+texture = ExtResource("2_txf6x")

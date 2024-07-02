@@ -1,0 +1,15 @@
+Sprite2D
+AnimationPlayer
+Container
+HBoxContainer
+Node
+CanvasLayer
+TextureRect
+ColorRect
+Button
+VBoxContainer
+PanelContainer
+MarginContainer
+Camera2D
+Node2D
+Label
